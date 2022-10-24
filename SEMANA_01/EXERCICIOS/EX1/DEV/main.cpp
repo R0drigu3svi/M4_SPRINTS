@@ -3,6 +3,11 @@
 
 // 1 -  Faça uma função que recebe uma certa medida e ajusta ela percentualmente 
 // entre dois valores mínimo e máximo e retorna esse valor
+int percentual(int valor, int min, int max) {
+  return (valor - min) * 100 / (max - min);
+}
+
+int resultado() { printf("%i", percentual(50, 0, 200)); }
 
 // 2 - Faça uma função que simule a leitura de um sensor lendo o 
 // valor do teclado ao final a função retorna este valor
@@ -13,7 +18,17 @@
 // valor máximo do vetor assim como a última posição preenchida
 // Evite também que, por acidente, um valor seja escrito em 
 // uma área de memória fora do vetor
+int leituraSensor() {
+  int sensor;
+  cout << "Insira aqui um valor:";
+  cin >> sensor;
+  return sensor;
+}
 
+int respostinha() {
+  int valorInserido = leituraSensor();
+  cout << "O valor inserido foi: " << valorInserido;
+}
 
 
 // 4 - Faça uma função que recebe um vetor com 4 posições que contém 
@@ -27,7 +42,26 @@
 
 // 5 - Faça uma função que pergunta ao usuário se ele deseja continuar o mapeamento e 
 // retorna verdadeiro ou falso
+bool continuarMapeamento() {
+  char resultado;
+  cout << "Deseja continuar o mapeamento 1(sim) ou 0(nao):";
+  cin >> resultado;
 
+  if (resultado == '1') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+int resposta() {
+  bool map = continuarMapeamento();
+  if (map == true) {
+    cout << "verdadeiro";
+  } else {
+    cout << "falso";
+  }
+}
 
 // 6 - A função abaixo (que está incompleta) vai "dirigindo" virtualmente um robô 
 // e através de 4 sensores em cada um dos 4 pontos do robo ("Direita", "Esquerda", 
